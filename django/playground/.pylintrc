@@ -1,2 +1,2 @@
-[MESSAGES CONTROL]
-disable = C0116
+[pylint]
+disable = C0114, C0116
