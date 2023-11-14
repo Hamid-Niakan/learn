@@ -2,5 +2,12 @@
 
 ✳️ start django project 👉 django-admin startproject <name> .
 
+✳️ find the path to project's venv 👉 pipenv --venv, take this and then ctrl+shift+p -> python interpreter -> /bin/python to use this interpreter
 
+✳️ create app 👉 python manage.py startapp <name>
 
+✳️ in an app 👉 apps.py is config and view.py is request handler
+
+✳️ an app should go into the installed apps list
+
+✳️ pipenv install django-debug-toolbar
