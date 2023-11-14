@@ -1,0 +1,6 @@
+✳️ activate virtual environmetn for the project 👉 pipenv shell
+
+✳️ start django project 👉 django-admin startproject <name> .
+
+
+
