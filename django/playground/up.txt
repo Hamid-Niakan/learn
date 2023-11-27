@@ -1,13 +1,25 @@
+✳️ 👉 💥
+
+💥 Fundamentals 💥
 ✳️ activate virtual environmetn for the project 👉 pipenv shell
-
 ✳️ start django project 👉 django-admin startproject <name> .
-
 ✳️ find the path to project's venv 👉 pipenv --venv, take this and then ctrl+shift+p -> python interpreter -> /bin/python to use this interpreter
-
 ✳️ create app 👉 python manage.py startapp <name>
-
 ✳️ in an app 👉 apps.py is config and view.py is request handler
-
 ✳️ an app should go into the installed apps list
-
 ✳️ pipenv install django-debug-toolbar
+
+💥 Data model 💥
+✳️ good model design 👉 minimal coupling - high cohesion (focus)
+✳️ model classes inherit from models.Model
+✳️ field types are in models.[fieldType] like models.CharField
+✳️ django automatically creates an id field as PK for the model
+✳️ set primary_key=True for field type parameter to change the PK for the model
+✳️ create one to one relationship: set models.OneToOneField in the child model and pass the parent model as first parameter and set primary_key to True
+✳️ create one to many relationship: set models.ForeignKey in the child model and pass the parent model as first parameter
+✳️ creat many to many relationship: set models.ManyToManyField in one model and pass the other model as the first parameter, django will create reverse relationship in other model with [otherModel_set] like product_set, to overwrite this name use related_name parameter
+✳️ circular dependency: just pass the model name as a string and set related_name='+', this tells django not to make the reverse relationship
+✳️ generic relationship: content_type models.ForeignKey(ContentType), object_id = models.PositiveSmallIntegerField(), content_object = GenericForeignKey()
+
+💥 Setting up the database 💥
+✳️ 
