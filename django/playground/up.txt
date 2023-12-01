@@ -69,4 +69,20 @@ This will require you to input pgadmin4 user email address and set the password
 ✳️ Open your browser and http://[ServerIP_or_domain]/pgadmin4.
 
 💥 Setting up the database 💥
+✳️ python manage.py makemigrations
+✳️ python manage.py migrate
+✳️ to customize database schema use class Meta: inside a model class
+✳️ create empty migration: python manage.py makemigrations <app name> --empty then in operations list use migrations.RunSQL()
+✳️ downgrade to a specific migration: python manage.py migrate <app name> <migration> like store 0003
+✳️ mockaroo.com: to generate dummy data
+
+💥 django ORM 💥
+✳️ 
+✳️ 
+✳️ 
+✳️ 
+✳️ 
+✳️ 
+✳️ 
+✳️ 
 ✳️ 
