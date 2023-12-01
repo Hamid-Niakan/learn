@@ -21,5 +21,36 @@
 ✳️ circular dependency: just pass the model name as a string and set related_name='+', this tells django not to make the reverse relationship
 ✳️ generic relationship: content_type models.ForeignKey(ContentType), object_id = models.PositiveSmallIntegerField(), content_object = GenericForeignKey()
 
+💥 configure django with postgres 💥
+✳️ sudo apt update
+✳️ sudo apt install python3-pip python3-dev libpq-dev postgresql postgresql-contrib
+✳️ During the Postgres installation, an operating system user named postgres was created to correspond to the postgres PostgreSQL administrative user. You need to use this user to perform administrative tasks. You can use sudo and pass in the username with the -u option.
+✳️ Log into an interactive Postgres session by typing: sudo -u postgres psql
+✳️ First, you will create a database for the Django project. Each project should have its own isolated database for security reasons. We will call the database myproject in this guide, but it’s always better to select something more descriptive: CREATE DATABASE myproject;
+✳️ Next, you will create a database user which you will use to connect to and interact with the database. Set the password to something strong and secure: CREATE USER myprojectuser WITH PASSWORD 'password';
+✳️ You are setting the default encoding to UTF-8, which Django expects. You are also setting the default transaction isolation scheme to “read committed”, which blocks reads from uncommitted transactions. Lastly, you are setting the timezone. By default, your Django projects will be set to use UTC. These are all recommendations from the Django project itself.
+✳️ ALTER ROLE myprojectuser SET client_encoding TO 'utf8';
+ALTER ROLE myprojectuser SET default_transaction_isolation TO 'read committed';
+ALTER ROLE myprojectuser SET timezone TO 'UTC';
+✳️ Now, all you need to do is give your database user access rights to the database you created: GRANT ALL PRIVILEGES ON DATABASE myproject TO myprojectuser;
+✳️ Exit the SQL prompt to get back to the postgres user’s shell session: \q
+✳️ in settings.py:
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'myproject',
+        'USER': 'myprojectuser',
+        'PASSWORD': 'password',
+        'HOST': 'localhost',
+        'PORT': '',
+    }
+}
+✳️ While you are here, you will also need to adjust the ALLOWED_HOSTS directive. This defines a whitelist of addresses or domain names allowed to connect to the Django instance. Any incoming requests with a Host header that is not in this list will raise an exception. Django requires that you set this to prevent a certain class of security vulnerability.
+# The simplest case: just add the domain name(s) and IP addresses of your Django server
+# ALLOWED_HOSTS = [ 'example.com', '203.0.113.5']
+# To respond to 'example.com' and any subdomains, start the domain with a dot
+# ALLOWED_HOSTS = ['.example.com', '203.0.113.5']
+ALLOWED_HOSTS = ['your_server_domain_or_IP']
+
 💥 Setting up the database 💥
 ✳️ 
