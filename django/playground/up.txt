@@ -52,5 +52,21 @@ DATABASES = {
 # ALLOWED_HOSTS = ['.example.com', '203.0.113.5']
 ALLOWED_HOSTS = ['your_server_domain_or_IP']
 
+💥 install pgAdmin4 on ubuntu 💥
+✳️ https://computingforgeeks.com/how-to-install-pgadmin-4-on-ubuntu/
+✳️ add the repository to our Ubuntu system
+curl  -fsSL https://www.pgadmin.org/static/packages_pgadmin_org.pub | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/pgadmin.gpg
+✳️ add pgAdmin repository in your Ubuntu system:
+sudo sh -c 'echo "deb https://ftp.postgresql.org/pub/pgadmin/pgadmin4/apt/$(lsb_release -cs) pgadmin4 main" > /etc/apt/sources.list.d/pgadmin4.list'
+✳️ You can check the contents of the repository file created using the following command:
+cat /etc/apt/sources.list.d/pgadmin4.list
+deb https://ftp.postgresql.org/pub/pgadmin/pgadmin4/apt/bullseye pgadmin4 main
+✳️ sudo apt update
+✳️ sudo apt install pgadmin4
+✳️ Initiate Apache web server configuration.
+sudo /usr/pgadmin4/bin/setup-web.sh0
+This will require you to input pgadmin4 user email address and set the password
+✳️ Open your browser and http://[ServerIP_or_domain]/pgadmin4.
+
 💥 Setting up the database 💥
 ✳️ 
