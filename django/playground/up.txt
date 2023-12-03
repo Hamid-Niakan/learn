@@ -97,7 +97,7 @@ usage: query_set = Product.objects.filter(inventory=F('unit_price'))
 ✳️ use distinct() to return a query_set with no duplicates
 ✳️ defering fields: only() and defer() work the same as values but instead of dictionaries they return instances of the objects so there might be extra queries to the database in certain situations
 ✳️ inner join: select_related() (1), prefetch_related() (n)
-✳️ 
+✳️ from django.db.models.aggregates import Count, Max, Min, Avg, Sum: Product.objects.aggregate(count=Count('id'))
 ✳️ 
 ✳️ 
 ✳️ 
