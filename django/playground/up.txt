@@ -98,7 +98,7 @@ usage: query_set = Product.objects.filter(inventory=F('unit_price'))
 ✳️ defering fields: only() and defer() work the same as values but instead of dictionaries they return instances of the objects so there might be extra queries to the database in certain situations
 ✳️ inner join: select_related() (1), prefetch_related() (n)
 ✳️ from django.db.models.aggregates import Count, Max, Min, Avg, Sum: Product.objects.aggregate(count=Count('id'))
-✳️ Expression object in django contains Value, F, Func, Aggregate
+✳️ Expression object in django contains Value (to set value), F (to reference fields), Func (to call db functions), Aggregate (for aggregates like sum), ExpressionWrapper (to build complex expressions)
 ✳️ from django.db.models import Value
 ✳️ Customer.objects.annotate(is_new=Value(True))
 ✳️ grouping: query_set = Customer.objects.annotate(orders_count=Count('order'))
