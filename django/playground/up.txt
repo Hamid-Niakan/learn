@@ -101,7 +101,7 @@ usage: query_set = Product.objects.filter(inventory=F('unit_price'))
 ✳️ Expression object in django contains Value, F, Func, Aggregate
 ✳️ from django.db.models import Value
 ✳️ Customer.objects.annotate(is_new=Value(True))
-✳️ 
+✳️ grouping: query_set = Customer.objects.annotate(orders_count=Count('order'))
 ✳️ 
 ✳️ 
 ✳️ 
