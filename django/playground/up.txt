@@ -110,5 +110,9 @@ TaggedItem.objects.select_related('tag').filter(content_type=content_type, objec
 ✳️ inset operation: collection = Collection() ... collection.save() or using kwarg we can use Collection.objects.create() but we lose intellisense
 ✳️ update: Collection.objects.get(pk=11) then update specific fields and then .save() or Collection.objects.filter(pk=11).update(**kwarg), the first approach is robust due to automatically update when some field names change but it has a performance penalty for reading from the db first, but the second approach update directly in db but because it is using kwarg it wont automatically update
 ✳️ delete: collection.delete(), bulk delete: Collection.objects.filter(id__gt=5).delete()
-✳️ 
+✳️ atomic operation: all changes must be done together and if something fails, all changes must be roll backed, to achieve this we can use transaction decoration for a function
+from django.db import transaction
+@transaction.atomic()
+def create_order(request):
+or if you want for a part of the code to be wrapped in a transaction you can use with transaction.atomic(): inside the function body
 ✳️ 
