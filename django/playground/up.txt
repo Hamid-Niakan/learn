@@ -115,4 +115,12 @@ from django.db import transaction
 @transaction.atomic()
 def create_order(request):
 or if you want for a part of the code to be wrapped in a transaction you can use with transaction.atomic(): inside the function body
-✳️ 
+✳️ execute raw sql quries: Product.objects.raw('SELECT * FROM store_product) or
+from django.db import connection
+cursor = connection.cursor()
+cursor.execute('raw query')
+cursor.close() or
+with connection.cursor() as cursor:
+    cursor.execute() or use a stored procedure like:
+with connection.cursor() as cursor:
+    cursor.callproc('get_customers', [1, 2])
