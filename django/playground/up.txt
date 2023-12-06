@@ -109,6 +109,6 @@ TaggedItem.objects.select_related('tag').filter(content_type=content_type, objec
 ✳️ querySet cach happens only when you list the querySet first i.e. list(querySet) and then querySet[0] and not the other way around
 ✳️ inset operation: collection = Collection() ... collection.save() or using kwarg we can use Collection.objects.create() but we lose intellisense
 ✳️ update: Collection.objects.get(pk=11) then update specific fields and then .save() or Collection.objects.filter(pk=11).update(**kwarg), the first approach is robust due to automatically update when some field names change but it has a performance penalty for reading from the db first, but the second approach update directly in db but because it is using kwarg it wont automatically update
-✳️ 
+✳️ delete: collection.delete(), bulk delete: Collection.objects.filter(id__gt=5).delete()
 ✳️ 
 ✳️ 
