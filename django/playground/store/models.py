@@ -1,4 +1,4 @@
-#pylint: disable = E0307
+# pylint: disable = E0307
 from django.db import models
 
 
@@ -14,14 +14,14 @@ class Collection(models.Model):
 
     def __str__(self) -> str:
         return self.title
-    
+
     class Meta:
         ordering = ['title']
 
 
 class Product(models.Model):
     title = models.CharField(max_length=255)
-    slug = models.SlugField(default='-')
+    slug = models.SlugField()
     description = models.TextField()
     unit_price = models.DecimalField(max_digits=6, decimal_places=2)
     inventory = models.IntegerField()
@@ -31,7 +31,7 @@ class Product(models.Model):
 
     def __str__(self) -> str:
         return self.title
-    
+
     class Meta:
         ordering = ['title']
 
@@ -52,6 +52,9 @@ class Customer(models.Model):
     birth_date = models.DateField(null=True)
     membership = models.CharField(
         max_length=1, choices=MEMBERSHIPS, default=membership_bronze)
+
+    def __str__(self) -> str:
+        return f'{self.first_name} {self.last_name}'
 
 
 class Order(models.Model):
