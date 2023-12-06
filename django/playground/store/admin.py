@@ -73,6 +73,13 @@ class CustomerAdmin(admin.ModelAdmin):
         return super().get_queryset(request).annotate(orders_count=Count('order'))
 
 
+class OrderItemInline(admin.TabularInline):
+    autocomplete_fields = ['product']
+    extra = 0
+    min_num = 1
+    model = models.OrderItem
+
+
 @admin.register(models.Order)
 class OrderAdmin(admin.ModelAdmin):
     list_display = ['placed_at', 'payment_status', 'customer_email']
@@ -80,6 +87,7 @@ class OrderAdmin(admin.ModelAdmin):
     list_select_related = ['customer']
     ordering = ['placed_at']
     autocomplete_fields = ['customer']
+    inlines = [OrderItemInline]
 
     def customer_email(self, order):
         return order.customer.email
