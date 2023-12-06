@@ -128,7 +128,7 @@ with connection.cursor() as cursor:
 💥 the admin site 💥
 ✳️ setup admin site: python manage.py createsuperuser -> python manage.py migrate
 ✳️ forget admin password: python manage.py changepassword <username of the superuser>
-✳️
+✳️ register a model to show up in admin site: admin.site.register(models.Product)
 ✳️
 ✳️
 ✳️
