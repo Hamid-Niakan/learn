@@ -105,5 +105,5 @@ usage: query_set = Product.objects.filter(inventory=F('unit_price'))
 ✳️ querying generic relationships: from django.contrib.contenttypes.models import ContentType
 content_type = ContentType.objects.get_for_model(Product)
 TaggedItem.objects.select_related('tag').filter(content_type=content_type, object_id=<someId>)
-✳️ 
+✳️ you can set custom manager for a model, this is a method you can access from the model manager i.e. Product.objects.customManager    
 ✳️ 
