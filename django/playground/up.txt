@@ -107,7 +107,7 @@ content_type = ContentType.objects.get_for_model(Product)
 TaggedItem.objects.select_related('tag').filter(content_type=content_type, object_id=<someId>)
 ✳️ you can set custom manager for a model, this is a method you can access from the model manager i.e. Product.objects.customManager
 ✳️ querySet cach happens only when you list the querySet first i.e. list(querySet) and then querySet[0] and not the other way around
-✳️ 
+✳️ inset operation: collection = Collection() ... collection.save() or using kwarg we can use Collection.objects.create() but we lose intellisense
 ✳️ 
 ✳️ 
 ✳️ 
