@@ -124,3 +124,15 @@ with connection.cursor() as cursor:
     cursor.execute() or use a stored procedure like:
 with connection.cursor() as cursor:
     cursor.callproc('get_customers', [1, 2])
+
+💥 the admin site 💥
+✳️ setup admin site: python manage.py createsuperuser -> python manage.py migrate
+✳️ forget admin password: python manage.py changepassword <username of the superuser>
+✳️
+✳️
+✳️
+✳️
+✳️
+✳️
+✳️
+✳️
