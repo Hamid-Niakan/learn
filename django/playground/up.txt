@@ -134,7 +134,7 @@ with connection.cursor() as cursor:
 class ProductAdmin(admin.ModelAdmin):
 
 💥 REST framework 💥
-✳️
+✳️ install the framework: pipenv install djangorestframework and then add 'rest_framework' to the installed_apps
 ✳️
 ✳️
 ✳️
