@@ -142,5 +142,7 @@ class ProductAdmin(admin.ModelAdmin):
 2. string
 3. nested object
 4. hyperlink
+
+💥 advanced api concepts 💥
 ✳️
 ✳️
