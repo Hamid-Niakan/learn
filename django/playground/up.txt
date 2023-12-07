@@ -5,7 +5,7 @@
 ✳️ start django project 👉 django-admin startproject <name> .
 ✳️ find the path to project's venv 👉 pipenv --venv, take this and then ctrl+shift+p -> python interpreter -> /bin/python to use this interpreter
 ✳️ create app 👉 python manage.py startapp <name>
-✳️ in an app 👉 apps.py is config and view.py is request handler
+✳️ in an app 👉 apps.py is config and view.py is request handler i.e. it takes a request and returns a response
 ✳️ an app should go into the installed apps list
 ✳️ pipenv install django-debug-toolbar
 
@@ -135,7 +135,7 @@ class ProductAdmin(admin.ModelAdmin):
 
 💥 REST framework 💥
 ✳️ install the framework: pipenv install djangorestframework and then add 'rest_framework' to the installed_apps
-✳️
+✳️ create endpoint: add a view for handling the request, add urls module in the app and specify the route that should be handled by that view function, add the app url in the project main urls module
 ✳️
 ✳️
 ✳️
