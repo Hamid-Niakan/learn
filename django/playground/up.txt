@@ -132,6 +132,8 @@ with connection.cursor() as cursor:
 ✳️ customize list page:
 @admin.register(models.Product)
 class ProductAdmin(admin.ModelAdmin):
+
+💥 REST framework 💥
 ✳️
 ✳️
 ✳️
