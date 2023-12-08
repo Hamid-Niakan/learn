@@ -1,6 +1,7 @@
 ✳️ 👉 💥
 
 💥 Fundamentals 💥
+✳️ install django by pipenv install django
 ✳️ activate virtual environmetn for the project 👉 pipenv shell
 ✳️ start django project 👉 django-admin startproject <name> .
 ✳️ find the path to project's venv 👉 pipenv --venv, take this and then ctrl+shift+p -> python interpreter -> /bin/python to use this interpreter
