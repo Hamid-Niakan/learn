@@ -145,4 +145,4 @@ class ProductAdmin(admin.ModelAdmin):
 
 💥 advanced api concepts 💥
 ✳️ for neseted routers install: pipenv drf-nested-routers
-✳️
+✳️ for generic filtering install: pipenv install django-filter
