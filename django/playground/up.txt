@@ -144,5 +144,5 @@ class ProductAdmin(admin.ModelAdmin):
 4. hyperlink
 
 💥 advanced api concepts 💥
-✳️
+✳️ for neseted routers install: pipenv drf-nested-routers
 ✳️
