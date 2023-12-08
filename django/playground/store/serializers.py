@@ -31,7 +31,7 @@ class CollectionSerializer(serializers.ModelSerializer):
 
 
 class ProductSerializer(serializers.ModelSerializer):
-    collection = CollectionSerializer()
+    # collection = CollectionSerializer()
     price_with_tax = serializers.SerializerMethodField(
         method_name='calculate_tax')
 
